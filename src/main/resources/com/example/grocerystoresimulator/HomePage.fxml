@@ -33,7 +33,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Employees">
+                <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onAction="#onEmployeesBtnClick" prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Employees">
                     <font>
                         <Font size="20.0" />
                     </font>

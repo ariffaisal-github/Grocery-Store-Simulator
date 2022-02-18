@@ -1,28 +1,26 @@
 package com.example.grocerystoresimulator;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.net.URL;
 import java.sql.ResultSet;
-import java.util.ResourceBundle;
 
 public class HomePage {
-    @FXML private TextField eid, ename, ephnno, edateofb, ebloodg, eaddress, esalary, egender, ehiredate;
-    @FXML private Label empAlreadyExist;
 
+    @FXML private TextField eid, ename, ephnno, edateofb, egender, ebloodg, eaddress, esalary, ehiredate;
+    @FXML private Label empAlreadyExist;
     @FXML
     protected void onLogoutBtnClick(ActionEvent event) {
         try {
@@ -104,4 +102,26 @@ public class HomePage {
         }
     }
 
+
+    public void onEmployeesBtnClick(ActionEvent event) {
+        try {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Employees.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Employees");
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene);
+            stage.setX(0);
+            stage.setY(0);
+            stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
+
+
+
+
+
+
