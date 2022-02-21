@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -19,6 +20,7 @@ import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 public class EmployeesTableController implements Initializable {
+    @FXML private Button paySalarybtn;
     @FXML private TableColumn<Employees, String> addressColumn;
     @FXML private TableColumn<Employees, String> bloodGroupColumn;
     @FXML private TableColumn<Employees, Integer> contactColumn;
@@ -40,7 +42,7 @@ public class EmployeesTableController implements Initializable {
         addressColumn.setCellValueFactory(new PropertyValueFactory<>("salary"));
         bloodGroupColumn.setCellValueFactory(new PropertyValueFactory<>("bloogGrp"));
         contactColumn.setCellValueFactory(new PropertyValueFactory<>("contactNo"));
-        dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<>("dOfbirth"));
+        dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
         employeesTable.setItems(getEmployees());
 
     }
@@ -58,7 +60,6 @@ public class EmployeesTableController implements Initializable {
                         rs.getString("date_of_birth"), rs.getString("gender"), rs.getString("blood_group"),
                         rs.getString("Address"), rs.getInt("salary"), rs.getString("hire_date")
                 );
-                System.out.println(".\n.\n.\n.\n"+e.eid+"\n"+e.name);
                 employeesList.add(e);
             }
         } catch (Exception e) {
@@ -88,6 +89,36 @@ public class EmployeesTableController implements Initializable {
             stage.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    public void paySalary(ActionEvent event) {
+        if(paySalarybtn.getText().equals("PAID")) return;
+        paySalarybtn.setText("PAID");
+        OracleConnect oc = null;
+        try {
+            oc = new OracleConnect();
+            String query = "SELECT * FROM EMPLOYEES";
+            ResultSet rs = oc.searchDB(query);
+            int salary=0, current_balance=0;
+            while (rs.next()) {
+                salary += rs.getInt("SALARY");
+            }                                              //  Total salary to be paid
+            rs = oc.searchDB("SELECT * FROM ACCOUNT");
+            while (rs.next()) {
+                current_balance = rs.getInt("CURRENT_BALANCE");
+            }
+            if(salary > current_balance) { paySalarybtn.setText("Insufficient Balance"); return; }
+            String str = String.format("UPDATE ACCOUNT SET CURRENT_BALANCE = (%d - %d) WHERE ACCOUNT_ID=1",current_balance,salary);
+            oc.updateDB(str);
+        } catch (Exception e) {
+            System.out.println("Exception in paying salary: " + e);
+        } finally {
+            try {
+                oc.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }

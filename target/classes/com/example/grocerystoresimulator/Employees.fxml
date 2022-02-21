@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grocerystoresimulator.EmployeesTableController">
    <children>
-      <Button layoutX="1089.0" layoutY="104.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="207.0" style="-fx-background-color: pink;" text="Pay Salary" textFill="#b11f1f">
+      <Button fx:id="paySalarybtn" layoutX="1045.0" layoutY="88.0" mnemonicParsing="false" onAction="#paySalary" prefHeight="78.0" prefWidth="251.0" style="-fx-background-color: pink;" text="Pay Salary" textFill="#b11f1f">
          <font>
             <Font name="Bodoni MT Condensed Bold" size="30.0" />
          </font>
@@ -17,7 +17,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="101.0" layoutY="104.0" mnemonicParsing="false" onAction="#onBackBtnClick" prefHeight="62.0" prefWidth="207.0" style="-fx-background-color: pink;" text="Back" textFill="#b11f1f">
+      <Button layoutX="101.0" layoutY="88.0" mnemonicParsing="false" onAction="#onBackBtnClick" prefHeight="78.0" prefWidth="251.0" style="-fx-background-color: pink;" text="Back" textFill="#b11f1f">
          <font>
             <Font name="Bodoni MT Condensed Bold" size="30.0" />
          </font>
@@ -25,7 +25,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <TableView fx:id="employeesTable" layoutX="152.0" layoutY="230.0" prefHeight="475.0" prefWidth="1030.0">
+      <TableView fx:id="employeesTable" layoutX="152.0" layoutY="230.0" prefHeight="475.0" prefWidth="1104.0">
         <columns>
           <TableColumn fx:id="empIDColumn" prefWidth="124.00004577636719" text="Employee ID" />
           <TableColumn fx:id="empnameColumn" prefWidth="102.39996337890625" text="Name" />

@@ -86,7 +86,7 @@ public class HomePage {
                         Integer.parseInt(eid.getText()), ename.getText(), Integer.parseInt(ephnno.getText()),
                         edateofb.getText(), egender.getText(), ebloodg.getText(), eaddress.getText(), Integer.parseInt(esalary.getText()),
                         ehiredate.getText());
-                System.out.println(insertQuery);
+                // System.out.println(insertQuery);
                 oc.updateDB(insertQuery);
                 eid.clear(); ename.clear(); ephnno.clear(); edateofb.clear(); egender.clear(); ebloodg.clear(); eaddress.clear(); esalary.clear(); ehiredate.clear();
             }

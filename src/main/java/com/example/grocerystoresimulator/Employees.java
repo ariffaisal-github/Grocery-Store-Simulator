@@ -2,7 +2,8 @@ package com.example.grocerystoresimulator;
 
 public class Employees {
 
-    int eid; String name; int contactNo; String dOfbirth, gender, bloogGrp, address; int salary;
+    int eid; String name; int contactNo;
+    String dateOfBirth, gender, bloogGrp, address; int salary;
 
     public void setEid(int eid) {
         this.eid = eid;
@@ -15,11 +16,13 @@ public class Employees {
     public void setContactNo(int contactNo) {
         this.contactNo = contactNo;
     }
-
-    public void setdOfbirth(String dOfbirth) {
-        this.dOfbirth = dOfbirth;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
     public void setGender(String gender) {
         this.gender = gender;
     }
@@ -52,10 +55,6 @@ public class Employees {
         return contactNo;
     }
 
-    public String getdOfbirth() {
-        return dOfbirth;
-    }
-
     public String getGender() {
         return gender;
     }
@@ -82,7 +81,7 @@ public class Employees {
         this.eid=eid;
         this.name=name;
         this.contactNo=contactNo;
-        this.dOfbirth=dOfbirth;
+        this.dateOfBirth=dOfbirth;
         this.gender=gender;
         this.bloogGrp=bloogGrp;
         this.address=address;
