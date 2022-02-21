@@ -55,7 +55,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Fire">
+                <Button mnemonicParsing="false" onAction="#onFireBtnClick" prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Fire">
                     <font>
                         <Font size="20.0" />
                     </font>

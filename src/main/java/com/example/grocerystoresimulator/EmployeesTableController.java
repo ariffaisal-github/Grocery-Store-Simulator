@@ -39,7 +39,7 @@ public class EmployeesTableController implements Initializable {
         genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
         hiredateColumn.setCellValueFactory(new PropertyValueFactory<>("hireDate"));
         salaryColumn.setCellValueFactory(new PropertyValueFactory<>("salary"));
-        addressColumn.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
         bloodGroupColumn.setCellValueFactory(new PropertyValueFactory<>("bloogGrp"));
         contactColumn.setCellValueFactory(new PropertyValueFactory<>("contactNo"));
         dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
@@ -81,7 +81,7 @@ public class EmployeesTableController implements Initializable {
             Stage stage=new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("HomePage.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            stage.setTitle("Hello!");
+            stage.setTitle("GROCERY STORE");
             stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene);
             stage.setX(0);

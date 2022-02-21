@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grocerystoresimulator.HomePage">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #b6b679;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grocerystoresimulator.HomePage">
     <children>
         <Label layoutX="226.0" layoutY="159.0" text="Employee ID">
             <font>
