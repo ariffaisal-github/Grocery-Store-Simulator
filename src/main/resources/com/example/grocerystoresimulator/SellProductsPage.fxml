@@ -14,34 +14,34 @@
                 <Font name="Bell MT" size="36.0" />
             </font>
         </Button>
-        <Label layoutX="553.0" layoutY="268.0" text="Product category :">
+        <Label layoutX="514.0" layoutY="227.0" text="Product category :">
             <font>
                 <Font name="Bell MT" size="33.0" />
             </font>
         </Label>
-        <Label layoutX="553.0" layoutY="388.0" text="Product name :">
+        <Label layoutX="514.0" layoutY="327.0" text="Product name :">
             <font>
                 <Font name="Bell MT" size="33.0" />
             </font>
         </Label>
-        <ComboBox fx:id="prodCategoryCombobox" layoutX="810.0" layoutY="262.0" prefHeight="51.0" prefWidth="357.0" />
-        <ComboBox fx:id="prodNameCombobox" layoutX="810.0" layoutY="382.0" prefHeight="51.0" prefWidth="357.0" />
-        <Button fx:id="enterCategory" layoutX="1108.0" layoutY="320.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="59.0" text="Enter">
+        <ComboBox fx:id="prodCategoryCombobox" layoutX="771.0" layoutY="221.0" prefHeight="51.0" prefWidth="357.0" />
+        <ComboBox fx:id="prodNameCombobox" layoutX="771.0" layoutY="321.0" prefHeight="51.0" prefWidth="357.0" />
+        <Button fx:id="enterCategory" layoutX="1069.0" layoutY="279.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="59.0" text="Enter">
             <font>
                 <Font size="15.0" />
             </font>
         </Button>
-        <Label layoutX="553.0" layoutY="520.0" text="No. of items :">
+        <Label layoutX="514.0" layoutY="406.0" text="No. of items :">
             <font>
                 <Font name="Bell MT" size="33.0" />
             </font>
         </Label>
-        <TextField fx:id="noOfOrderedItems" layoutX="810.0" layoutY="517.0" prefHeight="31.0" prefWidth="250.0">
+        <TextField fx:id="noOfOrderedItems" layoutX="771.0" layoutY="403.0" prefHeight="46.0" prefWidth="358.0">
             <font>
                 <Font size="22.0" />
             </font>
         </TextField>
-        <Button layoutX="758.0" layoutY="663.0" mnemonicParsing="false" onAction="#onSellbtnClick" prefHeight="56.0" prefWidth="169.0" text="Sell">
+        <Button layoutX="679.0" layoutY="768.0" mnemonicParsing="false" onAction="#onSellbtnClick" prefHeight="56.0" prefWidth="169.0" text="Sell">
             <font>
                 <Font size="26.0" />
             </font>
@@ -51,5 +51,35 @@
             <Font name="Bell MT" size="33.0" />
          </font>
       </Label>
+      <Label layoutX="504.0" layoutY="501.0" text="Name of Customer:">
+         <font>
+            <Font name="Bell MT" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="514.0" layoutY="571.0" text="Phone no. :">
+         <font>
+            <Font name="Bell MT" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="514.0" layoutY="639.0" text="Address :">
+         <font>
+            <Font name="Bell MT" size="33.0" />
+         </font>
+      </Label>
+      <TextField fx:id="customerAddress" layoutX="770.0" layoutY="635.0" prefHeight="46.0" prefWidth="358.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="phoneNo" layoutX="770.0" layoutY="567.0" prefHeight="46.0" prefWidth="358.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="customerName" layoutX="771.0" layoutY="497.0" prefHeight="46.0" prefWidth="358.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
     </children>
 </AnchorPane>

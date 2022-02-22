@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 
 public class SellProductsPage implements Initializable {
     @FXML private Label outOfStckPrint;
-    @FXML private TextField noOfOrderedItems;
+    @FXML private TextField noOfOrderedItems, customerAddress, phoneNo, customerName;
     @FXML private Button enterCategory;
     @FXML private ComboBox<String> prodCategoryCombobox, prodNameCombobox;
 
@@ -62,22 +62,11 @@ public class SellProductsPage implements Initializable {
                 oc.updateDB(String.format("update products set amount=amount-%d where product_id=%d",orderedAmount,pID));
                 oc.updateDB(String.format("update account set current_balance=current_balance+%d",totalSellingPrice));
                 oc.updateDB(String.format("update account set net_profit=net_profit+%d",(totalSellingPrice-totalCostPrice)));
+                oc.updateDB(String.format("insert into customers values(%s,'%s','%s',%s,%s)",
+                        phoneNo.getText(),customerName.getText(),customerAddress.getText(), totalSellingPrice ,pID));
 
-
-                // now another page opens
-                try {
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("CustomerInfo.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load());
-                    stage.setTitle("Fire an Employee");
-                    //stage.initStyle(StageStyle.UNDECORATED);
-                    stage.setScene(scene);
-                    stage.setX(0);
-                    stage.setY(0);
-                    stage.show();
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
+//                phoneNo.setText(""); customerName.setText(""); customerAddress.setText(""); prodNameCombobox.getItems().setAll("");
+                noOfOrderedItems.setText("");
             }
         } catch (Exception e) {
             System.out.println("Exception in selling : " + e);
