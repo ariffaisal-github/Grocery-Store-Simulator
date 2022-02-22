@@ -11,9 +11,9 @@
     <children>
         <VBox layoutX="546.0" layoutY="23.0">
             <children>
-                <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: pink;" text="Sell Products">
+                <Button mnemonicParsing="false" onAction="#onSellProductsBtnClick" prefHeight="70.0" prefWidth="250.0" text="Sell Products">
                     <font>
-                        <Font name="Bodoni MT Condensed" size="37.0" />
+                        <Font name="Book Antiqua" size="31.0" />
                     </font>
                     <VBox.margin>
                         <Insets bottom="20.0" top="60.0" />
@@ -22,9 +22,9 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#onBillsBtnClick" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: pink;" text="Bills">
+                <Button mnemonicParsing="false" onAction="#onBillsBtnClick" prefHeight="70.0" prefWidth="250.0" text="Bills">
                     <font>
-                        <Font name="Bodoni MT Condensed" size="37.0" />
+                        <Font name="Book Antiqua" size="31.0" />
                     </font>
                     <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
@@ -33,9 +33,9 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onAction="#onEmployeesBtnClick" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: pink;" text="Employees">
+                <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onAction="#onEmployeesBtnClick" prefHeight="70.0" prefWidth="250.0" text="Employees">
                     <font>
-                        <Font name="Bodoni MT Condensed" size="37.0" />
+                        <Font name="Book Antiqua" size="31.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
@@ -44,9 +44,9 @@
                         <Insets bottom="20.0" top="20.0" />
                     </VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#onHireBtnClick" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: pink;" text="Hire">
+                <Button mnemonicParsing="false" onAction="#onHireBtnClick" prefHeight="70.0" prefWidth="250.0" text="Hire">
                     <font>
-                        <Font name="Bodoni MT Condensed" size="37.0" />
+                        <Font name="Book Antiqua" size="31.0" />
                     </font>
                     <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
@@ -55,9 +55,9 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#onFireBtnClick" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: pink;" text="Fire">
+                <Button mnemonicParsing="false" onAction="#onFireBtnClick" prefHeight="70.0" prefWidth="250.0" text="Fire">
                     <font>
-                        <Font name="Bodoni MT Condensed" size="37.0" />
+                        <Font name="Book Antiqua" size="31.0" />
                     </font>
                     <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
@@ -66,9 +66,9 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#onSupplierBtnClick" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: pink;" text="Supplier">
+                <Button mnemonicParsing="false" onAction="#onSupplierBtnClick" prefHeight="70.0" prefWidth="250.0" text="Supplier">
                     <font>
-                        <Font name="Bodoni MT Condensed" size="37.0" />
+                        <Font name="Book Antiqua" size="31.0" />
                     </font>
                     <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
@@ -77,9 +77,9 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#onLogoutBtnClick" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: pink;" text="Log out">
+                <Button mnemonicParsing="false" onAction="#onLogoutBtnClick" prefHeight="70.0" prefWidth="250.0" text="Log out">
                     <font>
-                        <Font name="Bodoni MT Condensed" size="37.0" />
+                        <Font name="Book Antiqua" size="31.0" />
                     </font>
                     <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
