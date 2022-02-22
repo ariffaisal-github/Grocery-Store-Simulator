@@ -163,5 +163,21 @@ public class HomePage {
             }
         }
     }
+
+    public void onSupplierBtnClick(ActionEvent event) {
+        try {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SupplierPage.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Order items for the store");
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene);
+            stage.setX(0);
+            stage.setY(0);
+            stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
 
