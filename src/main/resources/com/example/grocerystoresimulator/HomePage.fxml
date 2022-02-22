@@ -22,7 +22,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: pink;" text="Bills">
+                <Button mnemonicParsing="false" onAction="#onBillsBtnClick" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: pink;" text="Bills">
                     <font>
                         <Font name="Bodoni MT Condensed" size="37.0" />
                     </font>

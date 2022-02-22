@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #b6b679;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grocerystoresimulator.BillsPage">
+   <Button layoutX="162.0" layoutY="126.0" mnemonicParsing="false" onAction="#onBackbtnClick" prefHeight="42.0" prefWidth="159.0" text="Back">
+      <font>
+         <Font name="Bell MT" size="32.0" />
+      </font>
+   </Button>
+   <Label layoutX="459.0" layoutY="301.0" text="Current balance (Tk):">
+      <font>
+         <Font name="Bell MT Bold" size="34.0" />
+      </font>
+   </Label>
+   <Label layoutX="459.0" layoutY="498.0" text="Tax pending (Tk):">
+      <font>
+         <Font name="Bell MT Bold" size="34.0" />
+      </font>
+   </Label>
+   <Label layoutX="459.0" layoutY="392.0" text="Electric bills pending (Tk):">
+      <font>
+         <Font name="Bell MT Bold" size="34.0" />
+      </font>
+   </Label>
+   <Label fx:id="currentBalance" layoutX="809.0" layoutY="304.0" textFill="#05760f">
+      <font>
+         <Font name="Bell MT Bold" size="28.0" />
+      </font>
+   </Label>
+   <Label fx:id="taxPending" layoutX="748.0" layoutY="501.0" text="600" textFill="#05760f">
+      <font>
+         <Font name="Bell MT Bold" size="28.0" />
+      </font>
+   </Label>
+   <Label fx:id="electricPending" layoutX="875.0" layoutY="395.0" text="800" textFill="#05760f">
+      <font>
+         <Font name="Bell MT Bold" size="28.0" />
+      </font>
+   </Label>
+   <Button layoutX="459.0" layoutY="618.0" mnemonicParsing="false" onAction="#onPayBillsbtnClick" prefHeight="60.0" prefWidth="169.0" text="Pay Bills">
+      <font>
+         <Font name="Bell MT" size="32.0" />
+      </font>
+   </Button>
+</AnchorPane>
