@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -17,6 +18,7 @@ import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 public class SupplierPage implements Initializable {
+    @FXML private Label outOFBalance;
     @FXML private TextField noOfOrderedItems;
     @FXML private Button enterCategory;
     @FXML private ComboBox<String> prodCategoryCombobox, prodNameCombobox;
@@ -84,15 +86,30 @@ public class SupplierPage implements Initializable {
         OracleConnect oc = null;
         try {
             oc = new OracleConnect();
+            //check if out of balance or not
+            ResultSet rs_ = oc.searchDB("SELECT CURRENT_BALANCE FROM ACCOUNT");
+
             String query = String.format("SELECT COST_PRICE FROM WHOLESALE " +
                     "WHERE PRODUCT_TYPE='%s' AND PRODUCT_NAME='%s' ",type, name);
             ResultSet rs = oc.searchDB(query);
-            while (rs.next()) {
-                costPrice = rs.getInt("COST_PRICE");
-
+            while (rs.next() && rs_.next()) {
+                int curr_bal = rs_.getInt("CURRENT_BALANCE");
+                costPrice = amount * rs.getInt("COST_PRICE");
+                if(curr_bal-costPrice < 0) {
+                    outOFBalance.setText("Out of Balance");
+                    return;
+                }
+                String query1 = String.format("UPDATE ACCOUNT SET CURRENT_BALANCE = CURRENT_BALANCE-%d",costPrice);
+                String query2 = String.format( "UPDATE ACCOUNT SET NET_EXPENDITURE = NET_EXPENDITURE + %d",costPrice);
+                oc.updateDB(query1);
+                oc.updateDB(query2);    // cutting total balance from account table
+                // now adding into products table
+                String query3 = String.format("UPDATE PRODUCTS SET AMOUNT = AMOUNT+%d " +
+                        "WHERE PRODUCT_TYPE='%s' AND PRODUCT_NAME = '%s'",amount,type,name);
+                oc.updateDB(query3);
             }
         } catch (Exception e) {
-            System.out.println("Exception in listEmployees: " + e);
+            System.out.println("Exception in supplier: " + e);
         } finally {
             try {
                 oc.close();

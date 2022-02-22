@@ -46,5 +46,10 @@
             <Font size="26.0" />
          </font>
       </Button>
+      <Label fx:id="outOFBalance" layoutX="663.0" layoutY="145.0" textFill="#b90303">
+         <font>
+            <Font name="Bell MT" size="33.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

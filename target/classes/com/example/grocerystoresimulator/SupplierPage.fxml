@@ -31,11 +31,6 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="enterName" layoutX="1108.0" layoutY="441.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="59.0" text="Enter">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
       <Label layoutX="460.0" layoutY="520.0" text="No. of items you want to order :">
          <font>
             <Font name="Bell MT" size="33.0" />
@@ -51,5 +46,10 @@
             <Font size="26.0" />
          </font>
       </Button>
+      <Label fx:id="outOFBalance" layoutX="663.0" layoutY="145.0" textFill="#b90303">
+         <font>
+            <Font name="Bell MT" size="33.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
