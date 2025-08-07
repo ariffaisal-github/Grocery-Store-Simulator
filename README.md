@@ -47,4 +47,3 @@ If you'd like to improve this project (UI, features, optimization, etc.), feel f
 ## 📄 License
 
 This project is for academic and learning purposes.
-
